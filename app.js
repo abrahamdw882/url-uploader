@@ -1,12 +1,11 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import FormData from 'form-data';
-import {
-  IncomingForm
-} from 'formidable';
+import pkg  from 'formidable';
 import fs from 'fs';
 import path from 'path';
 
+const { IncomingForm } = pkg;
 const app = express();
 const port = 3000;
 
