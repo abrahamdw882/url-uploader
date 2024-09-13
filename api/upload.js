@@ -1,4 +1,3 @@
-
 import { IncomingForm } from 'formidable';
 import fetch from 'node-fetch';
 import FormData from 'form-data';
