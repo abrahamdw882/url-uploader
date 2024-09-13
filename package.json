@@ -12,7 +12,7 @@
     "formidable": "^2.0.0"
   },
   "engines": {
-    "node": ">=16.x"
+    "node": ">=18.x"
   },
   "author": "ABRAHAM DWAMENA",
   "license": "MIT"
