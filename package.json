@@ -2,10 +2,6 @@
   "name": "my-website",
   "version": "1.0.0",
   "description": "A website that uploads images to Catbox and displays them.",
-  "main": "index.js",
-  "scripts": {
-    "start": "node server.mjs"
-  },
   "dependencies": {
     "form-data": "^4.0.0",
     "node-fetch": "^3.0.0",
@@ -14,6 +10,6 @@
   "engines": {
     "node": ">=18.x"
   },
-  "author": "ABRAHAM DWAMENA",
+  "author": "Abraham Dwamena",
   "license": "MIT"
 }
