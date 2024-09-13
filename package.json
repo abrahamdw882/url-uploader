@@ -15,5 +15,6 @@
     "node": ">=18.x"
   },
   "author": "Abraham Dwamena",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module"
 }
