@@ -6,6 +6,9 @@
     }
   },
   "routes": [
-    { "src": "/api/upload", "dest": "/api/upload.js" }
+    {
+      "src": "/api/upload",
+      "dest": "/api/upload.js"
+    }
   ]
 }
