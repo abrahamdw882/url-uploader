@@ -1,6 +1,6 @@
-import { IncomingForm } from 'formidable';
 import fetch from 'node-fetch';
 import FormData from 'form-data';
+import { IncomingForm } from 'formidable';
 
 export default async (req, res) => {
   if (req.method === 'POST') {
