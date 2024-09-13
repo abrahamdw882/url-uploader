@@ -25,11 +25,11 @@ app.post('/upload', (req, res) => {
     formData.append('reqtype', 'fileupload');
     formData.append('fileToUpload', fs.createReadStream(file.filepath), fileName);
     try {
-      const res = await fetch('https://catbox.moe/user/api.php', {
+      const response = await fetch('https://catbox.moe/user/api.php', {
         method: 'POST',
         body: formData
       });
-      const img = await res.text();
+      const img = await response.text();
       fs.unlinkSync(file.filepath);
       res.status(200).json({
         url: img
