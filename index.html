@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+</head>
+<body>
+    <h1>Upload File to Catbox</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" required />
+        <button type="submit">Upload</button>
+    </form>
+
+    <p id="response"></p>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            
+            try {
+                const response = await fetch('http://localhost:3000/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const imageUrl = await response.text();
+                document.getElementById('response').innerHTML = `Uploaded Image: <a href="${imageUrl}" target="_blank">${imageUrl}</a>`;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('response').innerText = 'Upload failed';
+            }
+        });
+    </script>
+</body>
+</html>
