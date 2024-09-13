@@ -18,16 +18,19 @@
         document.getElementById('uploadForm').addEventListener('submit', async (event) => {
             event.preventDefault();
             const formData = new FormData(event.target);
-            
+
             try {
-          
                 const response = await fetch('/upload', {
                     method: 'POST',
                     body: formData
                 });
-        
-                const imageUrl = await response.text();
-                document.getElementById('response').innerHTML = `Uploaded Image: <a href="${imageUrl}" target="_blank">${imageUrl}</a>`;
+                
+                const data = await response.json(); 
+                if (data.url) {
+                    document.getElementById('response').innerHTML = `Uploaded Image: <a href="${data.url}" target="_blank">${data.url}</a>`;
+                } else {
+                    document.getElementById('response').innerText = 'Upload failed';
+                }
             } catch (error) {
                 console.error('Error:', error);
                 document.getElementById('response').innerText = 'Upload failed';
