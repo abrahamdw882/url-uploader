@@ -20,10 +20,12 @@
             const formData = new FormData(event.target);
             
             try {
-                const response = await fetch('http://localhost:3000/upload', {
+          
+                const response = await fetch('/api/upload', {
                     method: 'POST',
                     body: formData
                 });
+        
                 const imageUrl = await response.text();
                 document.getElementById('response').innerHTML = `Uploaded Image: <a href="${imageUrl}" target="_blank">${imageUrl}</a>`;
             } catch (error) {
