@@ -2,11 +2,12 @@
   "name": "my-website",
   "version": "1.0.0",
   "description": "A website that uploads images to Catbox and displays them.",
-  "main": "api/upload.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node api/upload.js"
+    "start": "node app.js"
   },
   "dependencies": {
+    "express": "^4.21.0",
     "form-data": "^4.0.0",
     "node-fetch": "^3.0.0",
     "formidable": "^2.0.0"
