@@ -19,7 +19,7 @@ app.post('/upload', (req, res) => {
     }
 
     const file = files.file[0];
-    const fileName = file.originalFilename || 'temp.jpg';
+    const fileName = 'temp.jpg';
     const formData = new FormData();
     formData.append('reqtype', 'fileupload');
     formData.append('fileToUpload', fs.createReadStream(file.filepath), fileName);
